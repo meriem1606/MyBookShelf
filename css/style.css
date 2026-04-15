@@ -1,0 +1,902 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@600&display=swap');
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #fdf6f0;
+    background-image: radial-gradient(#e8c9bc 1px, transparent 1px);
+    background-size: 28px 28px;
+    color: #2e1f1f;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a { text-decoration: none; color: inherit; }
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    background-color: #fff8f4;
+    border-bottom: 1px solid #f0d5c8;
+    padding: 18px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #c47a6a;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #7a5a55;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover { color: #c47a6a; }
+
+/* ===== MAIN ===== */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 40px;
+    width: 100%;
+}
+
+/* ===== HERO ===== */
+.hero {
+    text-align: center;
+    padding: 90px 40px;
+    background: linear-gradient(135deg, #fce8e0, #f9d9cc);
+    border-radius: 24px;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '❀';
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    font-size: 2.5rem;
+    opacity: 0.15;
+}
+
+.hero::after {
+    content: '❀';
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    font-size: 2.5rem;
+    opacity: 0.15;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: #2e1f1f;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1rem;
+    color: #9a6e67;
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+
+/* ===== BOUTONS ===== */
+.btn {
+    display: inline-block;
+    padding: 13px 32px;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.btn-primary {
+    background-color: #c47a6a;
+    color: white;
+    box-shadow: 0 4px 15px rgba(196, 122, 106, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #b06a5a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(196, 122, 106, 0.4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #c47a6a;
+    border: 1.5px solid #c47a6a;
+}
+
+.btn-secondary:hover {
+    background-color: #c47a6a;
+    color: white;
+}
+
+.btn-danger {
+    background-color: transparent;
+    color: #c0392b;
+    border: 1.5px solid #c0392b;
+    font-size: 0.78rem;
+    padding: 8px 18px;
+    border-radius: 50px;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+    color: white;
+}
+
+/* ===== GRILLE DE LIVRES ===== */
+.livres-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 28px;
+    margin-top: 30px;
+}
+
+.livre-card {
+    background: white;
+    border: 1px solid #f0d5c8;
+    border-radius: 18px;
+    padding: 26px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 12px rgba(196, 122, 106, 0.07);
+}
+
+.livre-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(196, 122, 106, 0.15);
+}
+
+.livre-card h3 {
+    font-size: 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    color: #2e1f1f;
+    line-height: 1.3;
+}
+
+.livre-card .auteur {
+    font-size: 0.8rem;
+    color: #b08a84;
+    font-style: italic;
+}
+
+.livre-card .genre {
+    display: inline-block;
+    background: #fce8e0;
+    color: #c47a6a;
+    padding: 4px 12px;
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: 50px;
+}
+
+.livre-card .btn {
+    margin-top: auto;
+    text-align: center;
+    padding: 9px;
+    font-size: 0.75rem;
+}
+
+/* ===== FORMULAIRES ===== */
+.form-container {
+    background: white;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 50px 40px;
+    border-radius: 24px;
+    border: 1px solid #f0d5c8;
+    box-shadow: 0 8px 40px rgba(196, 122, 106, 0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 2rem;
+    color: #2e1f1f;
+}
+
+.form-group { margin-bottom: 22px; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 500;
+    font-size: 0.78rem;
+    color: #7a5a55;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #f0d5c8;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    font-family: 'DM Sans', sans-serif;
+    background: #fff8f4;
+    transition: border-color 0.2s;
+    color: #2e1f1f;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #c47a6a;
+    background: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+/* ===== MESSAGES ===== */
+.message {
+    padding: 13px 20px;
+    margin-bottom: 20px;
+    font-size: 0.88rem;
+    border-radius: 12px;
+}
+
+.message.success {
+    background: #eafaf1;
+    color: #1e8449;
+    border-left: 3px solid #27ae60;
+}
+
+.message.error {
+    background: #fdf0ef;
+    color: #922b21;
+    border-left: 3px solid #e74c3c;
+}
+
+/* ===== FICHE LIVRE ===== */
+.fiche-livre {
+    background: white;
+    border: 1px solid #f0d5c8;
+    border-radius: 24px;
+    padding: 50px;
+    box-shadow: 0 4px 30px rgba(196, 122, 106, 0.08);
+}
+
+.fiche-livre h1 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+.fiche-meta {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.fiche-meta span {
+    background: #fce8e0;
+    color: #c47a6a;
+    padding: 5px 16px;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: 50px;
+}
+
+/* ===== ÉTOILES ===== */
+.etoiles { color: #e8a87c; font-size: 1.1rem; }
+
+/* ===== AVIS ===== */
+.avis-liste { margin-top: 35px; }
+
+.avis-item {
+    background: #fff8f4;
+    border: 1px solid #f0d5c8;
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-bottom: 15px;
+    border-left: 3px solid #c47a6a;
+}
+
+.avis-item .avis-auteur {
+    font-weight: 600;
+    font-size: 0.88rem;
+    margin-bottom: 6px;
+    color: #2e1f1f;
+}
+
+.avis-item .avis-date {
+    font-size: 0.75rem;
+    color: #c4a09a;
+}
+
+/* ===== RECHERCHE ===== */
+.recherche-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.recherche-bar input,
+.recherche-bar select {
+    padding: 11px 16px;
+    border: 1.5px solid #f0d5c8;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    flex: 1;
+    min-width: 150px;
+    font-family: 'DM Sans', sans-serif;
+    background: white;
+}
+
+/* ===== TABLE ADMIN ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(196, 122, 106, 0.08);
+}
+
+th {
+    background: #c47a6a;
+    color: white;
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+td {
+    padding: 13px 18px;
+    border-bottom: 1px solid #fce8e0;
+    font-size: 0.88rem;
+    color: #2e1f1f;
+}
+
+tr:hover td { background: #fff8f4; }
+
+/* ===== FOOTER ===== */
+footer {
+    background: #2e1f1f;
+    color: #c4a09a;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.78rem;
+    letter-spacing: 0.5px;
+    margin-top: auto;
+}
+
+/* ===== MA LISTE ===== */
+.liste-item {
+    background: white;
+    border: 1px solid #f0d5c8;
+    border-radius: 14px;
+    padding: 20px 25px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(196, 122, 106, 0.06);
+}
+
+.statut-badge {
+    padding: 5px 14px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: 50px;
+}
+
+.statut-badge.a-lire { background: #fef9f0; color: #e8a87c; }
+.statut-badge.en-cours { background: #eef6fb; color: #2980b9; }
+.statut-badge.lu { background: #eafaf1; color: #27ae60; }
+
+/* ===== SECTION TITRE ===== */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0d5c8;
+}
+
+.section-header h1 { font-size: 1.8rem; }
+
+.livre-card img {
+    background-color: #fce8e0;
+    min-height: 60px;
+}
+
+/* ===== BOUTON FLOTTANT (PROPRE) ===== */
+.btn-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #c47a6a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(196, 122, 106, 0.4);
+    z-index: 999;
+    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-float:hover {
+    transform: scale(1.1);
+}
+
+/* ===== MEDIA QUERIES (RESPONSIVE) ===== */
+
+/* Tablettes et Mobiles (Moins de 768px) */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 25px;
+    }
+
+    .nav-links {
+        display: none; /* Cache le menu par défaut sur mobile (à gérer en JS) */
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 20px;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .livres-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Cartes plus petites */
+        gap: 15px;
+    }
+
+    .fiche-livre {
+        padding: 25px;
+    }
+
+    .form-container {
+        padding: 30px 20px;
+    }
+
+    /* On rend les tableaux scrollables sur mobile */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* Petits Mobiles (Moins de 480px) */
+@media (max-width: 480px) {
+    .livres-grid {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+
+    .recherche-bar {
+        flex-direction: column;
+    }
+
+    .recherche-bar input, .recherche-bar select {
+        width: 100%;
+    }
+}
+
+.btn-full {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.form-footer-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #9a6e67;
+}
+
+.form-link {
+    color: #c47a6a;
+    font-weight: 600;
+}
+
+/* --- REPARATION DU DESIGN CONNEXION --- */
+
+/* 1. Force le bouton à prendre toute la largeur et à être centré */
+.btn-full {
+    width: 100% !important;
+    display: block;
+    margin-top: 15px;
+}
+
+/* 2. Centre le texte du bas et ajuste la taille */
+.form-footer-text {
+    text-align: center !important;
+    margin-top: 25px;
+    font-size: 0.85rem;
+    color: #9a6e67;
+    width: 100%;
+}
+
+/* 3. Redonne la couleur spécifique et le gras au lien d'inscription */
+.form-link {
+    color: #c47a6a !important;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.form-link:hover {
+    color: #b06a5a;
+    text-decoration: underline;
+}
+
+/* --- STYLES POUR LIVRES.PHP --- */
+
+.result-count {
+    color: #9a6e67;
+    font-size: 0.9rem;
+}
+
+.no-results {
+    text-align: center;
+    padding: 60px;
+    color: #9a6e67;
+    font-size: 1.2rem;
+}
+
+.livre-cover {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.livre-cover-placeholder {
+    width: 100%;
+    height: 180px;
+    background: #fce8e0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.annee-livre {
+    font-size: 0.78rem;
+    color: #c4a09a;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+/* --- STYLES FICHE LIVRE --- */
+.fiche-container { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 30px; }
+.fiche-image { width: 180px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); flex-shrink: 0; }
+.fiche-placeholder { width: 180px; height: 260px; background: #fce8e0; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: #c47a6a; font-weight: bold; flex-shrink: 0; }
+.fiche-infos { flex: 1; }
+.etoiles-moyenne { color: #e8a87c; font-size: 0.95rem; }
+.fiche-description { color: #7a5a55; line-height: 1.8; margin-bottom: 30px; font-size: 0.95rem; }
+.fiche-separator { border: none; border-top: 1px solid #f0d5c8; margin: 30px 0; }
+.fiche-titre-avis { margin-bottom: 20px; }
+
+/* Formulaires et Messages */
+.form-liste { display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
+.select-statut { padding: 10px 16px; border: 1.5px solid #f0d5c8; border-radius: 50px; background: white; }
+.msg-succes-liste { color: #27ae60; margin-bottom: 20px; font-size: 0.9rem; }
+.msg-connexion-avis { color: #9a6e67; margin-bottom: 25px; font-size: 0.9rem; }
+.form-avis-container { background: #fff8f4; border: 1px solid #f0d5c8; border-radius: 16px; padding: 25px; margin-bottom: 30px; }
+.spoiler-checkbox { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.spoiler-checkbox input { width: 18px; height: 18px; accent-color: #c47a6a; }
+
+/* Avis et Spoiler */
+.avis-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.avis-texte { font-size: 0.88rem; color: #555; line-height: 1.6; }
+.spoiler-badge { margin-bottom: 10px; background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; display: inline-block; }
+.spoiler-mask { background: #f0ebe3; border-radius: 8px; padding: 12px; cursor: pointer; text-align: center; font-size: 0.85rem; color: #9a6e67; }
+.spoiler-hidden { display: none; font-size: 0.88rem; color: #555; line-height: 1.6; }
+.avis-date { margin-top: 8px; color: #c4a09a; font-size: 0.75rem; }
+
+/* Réponses */
+.reponses-container { margin-top: 15px; padding-left: 20px; border-left: 2px solid #f0d5c8; }
+.reponse-item { background: #fff8f4; border-radius: 10px; padding: 12px 15px; margin-bottom: 10px; }
+.reponse-header { display: flex; justify-content: space-between; margin-bottom: 6px; }
+.reponse-auteur { font-weight: 600; font-size: 0.85rem; color: #2e1f1f; }
+.reponse-date { font-size: 0.75rem; color: #c4a09a; }
+.reponse-texte { font-size: 0.85rem; color: #555; line-height: 1.5; }
+.reponse-action { margin-top: 12px; }
+.btn-toggle-reponse { background: none; border: none; color: #c47a6a; font-size: 0.82rem; cursor: pointer; padding: 0; }
+.form-reponse { display: none; margin-top: 10px; }
+.form-reponse form { display: flex; gap: 8px; align-items: flex-start; }
+.form-reponse textarea { flex: 1; padding: 10px; border: 1.5 solid #f0d5c8; border-radius: 12px; font-size: 0.85rem; resize: vertical; min-height: 70px; }
+.btn-sm { padding: 10px 16px; font-size: 0.78rem; }
+
+
+/* --- STYLES ADMIN --- */
+.form-admin {
+    max-width: 600px !important;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+    .form-actions {
+        flex-direction: column; /* Boutons l'un sur l'autre sur petit mobile */
+    }
+    .form-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* --- DASHBOARD ADMIN --- */
+.stats-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: white;
+    border: 1px solid #f0d5c8;
+    border-radius: 14px;
+    padding: 20px 30px;
+    text-align: center;
+    flex: 1;
+    min-width: 140px;
+    box-shadow: 0 2px 10px rgba(196, 122, 106, 0.05);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    color: #c47a6a;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #9a6e67;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+.admin-table-title {
+    margin-bottom: 20px;
+}
+
+/* Éléments internes de la table */
+.admin-thumb {
+    width: 45px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.admin-emoji-placeholder {
+    font-size: 1.5rem;
+}
+
+.admin-auteur-cell {
+    font-style: italic;
+    color: #b08a84;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-table {
+    padding: 7px 14px !important;
+    font-size: 0.75rem !important;
+    white-space: nowrap;
+}
+
+/* Responsive Table */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+    .admin-actions {
+        flex-direction: column;
+    }
+}
+
+/* --- STYLES SPECIFIQUES ACCUEIL --- */
+
+.home-cover {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.home-placeholder {
+    width: 100%;
+    height: 180px;
+    background-color: #fce8e0;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #c47a6a;
+    font-weight: bold;
+}
+
+/* --- STYLES MA LISTE --- */
+
+.stats-grid {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: white;
+    border: 1px solid #f0d5c8;
+    border-radius: 14px;
+    padding: 16px 24px;
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+}
+
+.stat-value {
+    font-size: 1.6rem;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #9a6e67;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Couleurs spécifiques aux statuts */
+.border-peach { border-color: #f0d5c8; }
+.color-peach { color: #c47a6a; }
+.border-blue { border-color: #d4e6f1; }
+.color-blue { color: #2980b9; }
+.border-green { border-color: #d5f5e3; }
+.color-green { color: #27ae60; }
+
+/* Liste des items */
+.no-results-list {
+    text-align: center;
+    padding: 60px;
+    color: #9a6e67;
+}
+
+.no-results-list p {
+    margin-bottom: 25px; /* Espace ajouté pour décoller le bouton */
+}
+
+.empty-msg {
+    font-size: 1.3rem;
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 10px; /* Espace entre les deux lignes de texte */
+}
+
+.item-info h3 a {
+    font-size: 1rem;
+    color: #2e1f1f;
+}
+
+.item-auteur {
+    font-size: 0.82rem;
+    color: #b08a84;
+    font-style: italic;
+}
+
+.liste-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form-inline {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.select-small {
+    padding: 6px 12px;
+    border: 1.5px solid #f0d5c8;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    background: white;
+}
+
+.btn-xs {
+    padding: 7px 14px !important;
+    font-size: 0.75rem !important;
+}
