@@ -5,5 +5,4 @@ Ce projet est un site de gestion de bibliothèque réalisé en PHP/MySQL dans le
 Note pour les tests :
 Pour accéder à l'interface administrateur, vous pouvez utiliser l'identifiant suivant : admin@biblio.com avec le mot de passe admin123
 
-Pour le site : 
-https://unbridled-georgianne-proconsularly.ngrok-free.dev/bibliotheque/index.php
+La base de données se nomme biblioteque et les identifiants de connexion PDO sont configurés par défaut sur root/sans mot de passe.
