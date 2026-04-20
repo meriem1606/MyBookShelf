@@ -2,7 +2,7 @@
 require_once 'includes/db.php';
 require_once 'includes/header.php';
 
-// Sélection aléatoire pour le dynamisme (Modèle) [cite: 1358]
+// Sélection aléatoire pour le dynamisme 
 $stmt = $pdo->query("SELECT * FROM livres ORDER BY RAND() LIMIT 4");
 $livres = $stmt->fetchAll();
 ?>
